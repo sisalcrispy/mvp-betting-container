@@ -1,11 +1,11 @@
-import { shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import React from 'react';
-import App from "./app.component";
+import App from './app.component';
 
-const wrapper = shallow(<App/>);
+const wrapper = shallow(<App />);
 
 describe('AppComponent component', () => {
-    it('renders learn react link', () => {
-        expect(wrapper.find('.App-link')).toHaveLength(1);
-    });
+  it('renders learn react link', () => {
+    expect(wrapper.find('.App-link')).toHaveLength(1);
+  });
 });
