@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0"
+  },
+  "devDependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^25.1.0",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
+    "babel-jest": "^24.9.0",
+    "identity-obj-proxy": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -16,8 +22,22 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "jest": {
+    "setupFiles": [
+      "./src/tests/setup-tests.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|svg)$": "<rootDir>/src/tests/file-mock.js",
+      "\\.(scss)$": "identity-obj-proxy"
+    }
   },
   "browserslist": {
     "production": [
