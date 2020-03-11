@@ -1,0 +1,17 @@
+@import 'src/styles/config';
+
+.bets-list {
+  .card {
+    margin: 1rem 0;
+    padding: 2rem;
+    transition: 200ms all ease-in-out;
+
+    &:hover {
+      background: darken(#fff, 10);
+    }
+
+    span {
+      color: $sisal-dark-gray;
+    }
+  }
+}

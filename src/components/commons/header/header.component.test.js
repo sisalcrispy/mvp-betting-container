@@ -4,7 +4,7 @@ import Header from './header.component';
 
 const wrapper = shallow(<Header />);
 
-describe('Header Component component', () => {
+describe('Header component', () => {
   it('renders the title', () => {
     expect(wrapper.find('h1')).toHaveLength(1);
   });
