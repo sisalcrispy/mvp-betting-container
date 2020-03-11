@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './bets-list.component.scss';
 import UseTranslations from '../../../hooks/translations.hook';
+
+import './bets-list.component.scss';
 
 const BetsList = () => {
   const betsList = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }];
