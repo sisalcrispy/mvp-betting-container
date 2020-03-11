@@ -37,10 +37,10 @@
   },
   "jest": {
     "setupFiles": [
-      "./src/tests/setup-tests.js"
+      "./src/config/setup-tests.js"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|svg)$": "<rootDir>/src/tests/file-mock.js",
+      "\\.(jpg|jpeg|png|svg)$": "<rootDir>/src/config/file-mock.js",
       "\\.(scss)$": "identity-obj-proxy"
     }
   },

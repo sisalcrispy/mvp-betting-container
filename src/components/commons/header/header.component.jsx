@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../../../static/images/logo.svg';
 import './header.component.scss';
 
-function AppHeader() {
+function Header() {
   return (
 
     <header className="app-header">
@@ -16,11 +16,11 @@ function AppHeader() {
                 POC BETTING
             </h1>
           </div>
-            <div className={'col-md-2'}>
-                <button className={'btn btn-primary'}>
-                    CTA
-                </button>
-            </div>
+          <div className="col-md-2">
+            <button type="button" className="btn btn-primary">
+                CTA
+            </button>
+          </div>
         </div>
       </div>
     </header>
@@ -28,4 +28,4 @@ function AppHeader() {
   );
 }
 
-export default AppHeader;
+export default Header;

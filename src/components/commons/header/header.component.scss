@@ -15,5 +15,10 @@
       align-items: center;
       justify-content: center;
     }
+    button{
+      height: calc(#{$header-height} - 2rem);
+      margin-top: 1rem;
+      width: 100%;
+    }
   }
 }

@@ -1,11 +1,11 @@
 import { shallow } from 'enzyme';
 import React from 'react';
-import App from '../../app.component';
+import Header from './header.component';
 
-const wrapper = shallow(<App />);
+const wrapper = shallow(<Header />);
 
-describe('AppComponent component', () => {
-  it('renders learn react link', () => {
-    expect(wrapper.find('.App-link')).toHaveLength(1);
+describe('Header Component component', () => {
+  it('renders the title', () => {
+    expect(wrapper.find('h1')).toHaveLength(1);
   });
 });
