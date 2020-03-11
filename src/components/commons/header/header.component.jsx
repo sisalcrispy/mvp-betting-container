@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import UseTranslations from '../../../hooks/translations.hook';
+
 import logo from '../../../static/images/logo.svg';
 import './header.component.scss';
-import UseTranslations from '../../../hooks/translations.hook';
-import { Link } from 'react-router-dom';
 
 const Header = props => {
   const { t, getOtherLanguage } = UseTranslations();
