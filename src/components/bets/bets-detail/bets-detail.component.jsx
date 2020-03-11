@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UseTranslations from '../../../hooks/translations.hook';
 
 const BetsDetail = props => {
   const { match } = props;
+  const { t } = UseTranslations();
 
   return (
     <div className="container">
@@ -12,10 +14,10 @@ const BetsDetail = props => {
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
                 <Link to="/">
-                    Back
+                  {t('back')}
                 </Link>
               </li>
-              <li className="breadcrumb-item active" aria-current="page">current</li>
+              <li className="breadcrumb-item active" aria-current="page">{t('bet')} #{match.params.id}</li>
             </ol>
           </nav>
         </div>
@@ -23,8 +25,8 @@ const BetsDetail = props => {
       <div className="row">
         <div className="col-md-8 offset-md-2">
           <div className="card">
-            <div className="card-inner">
-                THIS IS THE DETAIL OF BET #{match.params.id}
+            <div className="p-4">
+              {t('this_is_the_bet')} #{match.params.id}
             </div>
           </div>
         </div>
