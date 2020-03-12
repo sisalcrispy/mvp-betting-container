@@ -1,10 +1,11 @@
-# Mvp terminale betting
+# MVP nuovo terminale betting
 
-## requisiti mvp
-- Internalizzazione
-- Test unitari
+## Obiettivo:
+L'obiettivo del task è la realizzazione di un progetto utile a definire un modello di sviluppo che consenta di sviluppare delle sezioni dell'applicazione aventi codebase il più disaccoppiate possibile e quindi testabili e deployabili in autonomia.
 
-Struttura:
-- Container principale: contiene logiche di routing, permessi utenti, interceptor
-- Moduli
+L'esempio va corredato da guidelines per:
+
+- struttura standard di progetto
+- gestione internazionalizzaione
+- test unitari
 
