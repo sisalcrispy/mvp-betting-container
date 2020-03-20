@@ -4,12 +4,13 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.4.1",
+    "i18next": "^19.3.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0",
+    "react-i18next": "^11.3.3",
     "react-router-dom": "^5.1.2",
-    "i18next": "^19.3.2",
-    "react-i18next": "^11.3.3"
+    "react-scripts": "3.4.0",
+    "sisal-bet-module": "^1.0.6"
   },
   "devDependencies": {
     "enzyme": "^3.11.0",
