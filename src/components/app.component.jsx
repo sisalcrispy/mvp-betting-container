@@ -7,6 +7,7 @@ import UseTranslations from '../hooks/translations.hook';
 import Header from './commons/header/header.component';
 import BetsList from './bets/bets-list/bets-list.component';
 import BetsDetail from './bets/bets-detail/bets-detail.component';
+import LoginForm from './auth/login.component';
 
 import './commons/header/header.component.scss';
 
@@ -19,7 +20,8 @@ function App() {
         <Header onChangeLanguage={switchLanguage} />
         <Switch>
           <Route path="/bets/:id" component={BetsDetail} />
-          <Route exact path="/" component={BetsList} />
+          <Route exact path="/bets/" component={BetsList} />
+          <Route exact path="/" component={LoginForm} />
         </Switch>
       </BrowserRouter>
     </div>

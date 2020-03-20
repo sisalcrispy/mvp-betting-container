@@ -5,5 +5,8 @@
   "cta": {
     "go_to_bet": "Go to bet",
     "switch_to": "Switch to"
+  },
+  "errors": {
+    "provide_credentials": "Provide credentials"
   }
 }

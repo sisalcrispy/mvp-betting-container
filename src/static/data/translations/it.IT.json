@@ -5,5 +5,8 @@
   "cta": {
     "go_to_bet": "Vai alla scommessa",
     "switch_to": "Cambia a"
+  },
+  "errors": {
+    "provide_credentials": "Inserisci le credenziali"
   }
 }
