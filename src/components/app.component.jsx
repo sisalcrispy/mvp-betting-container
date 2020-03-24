@@ -2,30 +2,30 @@ import React from 'react';
 import {
   Switch, Route, BrowserRouter,
 } from 'react-router-dom';
+
 import UseTranslations from '../hooks/translations.hook';
-
 import Header from './commons/header/header.component';
-import BetsList from './bets/bets-list/bets-list.component';
-import BetsDetail from './bets/bets-detail/bets-detail.component';
-import LoginForm from './auth/login.component';
+import RouteGuard from './auth/route-guard/route-guard.component';
+import ContextProvider from './commons/context-provider/context-provider.component';
 
-import './commons/header/header.component.scss';
+import routes from '../config/app-routing';
 
-
-function App() {
+const App = () => {
   const { switchLanguage } = UseTranslations();
   return (
-    <div>
+    <ContextProvider>
       <BrowserRouter>
         <Header onChangeLanguage={switchLanguage} />
         <Switch>
-          <Route path="/bets/:id" component={BetsDetail} />
-          <Route exact path="/bets/" component={BetsList} />
-          <Route exact path="/" component={LoginForm} />
+          {routes.map(route => (
+            <Route key={route.path} path={route.path}>
+              <RouteGuard Component={route.component} canActivate={route.canActivate} />
+            </Route>
+          ))}
         </Switch>
       </BrowserRouter>
-    </div>
+    </ContextProvider>
   );
-}
+};
 
 export default App;

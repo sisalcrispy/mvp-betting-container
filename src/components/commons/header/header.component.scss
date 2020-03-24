@@ -2,20 +2,31 @@
 
 .app-header {
   background-color: $sisal-dark-gray;
+
   .row {
     height: $header-height;
-    img {
-      height: calc(#{$header-height} - 2rem);
-      margin-top: 1rem;
-    }
-    h1{
-      color: $sisal-light-green;
-      height: 100%;
+
+    .logo {
       display: flex;
       align-items: center;
-      justify-content: center;
+      height: 100%;
+      img {
+       width: 5rem;
+      }
+
+      h1 {
+        color: $sisal-dark-green;
+        height: 100%;
+        font-size: 2rem;
+        display: flex;
+        font-weight: bold;
+        margin-bottom: 0;;
+        align-items: center;
+        justify-content: center;
+      }
     }
-    button{
+
+    button.switch-language {
       height: calc(#{$header-height} - 2rem);
       margin-top: 1rem;
       width: 100%;

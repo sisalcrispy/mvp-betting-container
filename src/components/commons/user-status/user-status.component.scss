@@ -1,0 +1,26 @@
+@import 'src/styles/config';
+
+.user-status{
+  height: 100%;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p,a,button{
+    margin: 0;
+  }
+
+  button{
+    background: transparent;
+    color: $link-color;
+    border: 0;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  span{
+    margin-left: .5rem;
+    margin-right: .5rem;
+  }
+}

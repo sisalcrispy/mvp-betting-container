@@ -4,6 +4,7 @@ import UseTranslations from '../../../hooks/translations.hook';
 
 import logo from '../../../static/images/logo.svg';
 import './header.component.scss';
+import UserStatus from '../user-status/user-status.component';
 
 const Header = props => {
   const { t, getOtherLanguage } = UseTranslations();
@@ -12,22 +13,21 @@ const Header = props => {
     <header className="app-header">
       <div className="container">
         <div className="row">
-          <div className="col-md-2">
-            <Link to="/">
+          <div className="col-md-3">
+            <Link to="/" className="logo">
               <img src={logo} className="App-logo" alt="logo" />
-            </Link>
-          </div>
-          <div className="col-md-8">
-            <Link to="/">
               <h1>
-                POC BETTING
+                POC
               </h1>
             </Link>
           </div>
-          <div className="col-md-2">
+          <div className="col-md-6">
+            <UserStatus />
+          </div>
+          <div className="col-md-3">
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn-primary switch-language"
               onClick={() => props.onChangeLanguage()}
             >
               {t('cta.switch_to')} ({getOtherLanguage()})

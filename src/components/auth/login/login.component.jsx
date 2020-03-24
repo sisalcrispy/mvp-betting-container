@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './login.component.scss';
-import UseLoginForm from '../../hooks/login-form.hook';
-import UseTranslations from '../../hooks/translations.hook';
+import useLoginForm from '../../../hooks/login-form.hook';
+import UseTranslations from '../../../hooks/translations.hook';
+
+import context from '../../../store/context';
 
 
 const LoginForm = props => {
   const { history } = props;
   const {
-    username, password, sendForm, setUsername, setPassword, errors,
-  } = UseLoginForm(history);
+    username, password, sendForm, setUsername, setPassword, loginErrors,
+  } = useLoginForm(history);
   const { t } = UseTranslations();
+  const { dispatch } = useContext(context);
 
   return (
     <div className="container" id="login-form">
@@ -19,9 +22,10 @@ const LoginForm = props => {
           <h1>LOGIN</h1>
         </div>
         <div className="col-md-5 offset-2 mt-3">
-          <form onSubmit={sendForm}>
+
+          <form onSubmit={e => sendForm(e, dispatch)}>
             <div className="errors">
-              {errors.map(error => <p key={error}>{t(error)}</p>)}
+              {loginErrors.map(error => <p key={error}>{t(error)}</p>)}
             </div>
             <input
               type="text"
@@ -38,6 +42,7 @@ const LoginForm = props => {
             <input type="submit" className="btn btn-primary" value="LOGIN" />
 
           </form>
+
         </div>
         <div className="col-md-3 mt-3">
           <div className="info-users">
