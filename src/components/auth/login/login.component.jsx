@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import useLoginForm from '../../../hooks/login-form.hook';
-import UseTranslations from '../../../hooks/translations.hook';
 import context from '../../../store/context';
 
 import './login.component.scss';
@@ -12,8 +11,8 @@ const LoginForm = props => {
   const {
     username, password, sendForm, setUsername, setPassword, loginErrors,
   } = useLoginForm(history);
-  const { t } = UseTranslations();
   const { dispatch, state } = useContext(context);
+  const { t } = state;
 
   return (
     <>

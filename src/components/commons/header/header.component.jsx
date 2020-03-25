@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import UseTranslations from '../../../hooks/translations.hook';
+import UserStatus from '../user-status/user-status.component';
+import context from '../../../store/context';
 
 import logo from '../../../static/images/logo.svg';
 import './header.component.scss';
-import UserStatus from '../user-status/user-status.component';
 
-const Header = props => {
-  const { t, getOtherLanguage } = UseTranslations();
+const Header = () => {
+  const { state, dispatch } = useContext(context);
+  const { t, otherLanguage } = state;
   return (
 
     <header className="app-header">
@@ -28,9 +29,9 @@ const Header = props => {
             <button
               type="button"
               className="btn btn-primary switch-language"
-              onClick={() => props.onChangeLanguage()}
+              onClick={() => dispatch('switchLanguage')}
             >
-              {t('cta.switch_to')} ({getOtherLanguage()})
+              {t('cta.switch_to')} ({otherLanguage()})
             </button>
           </div>
         </div>

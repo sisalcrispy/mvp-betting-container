@@ -3,7 +3,6 @@ const AuthService = () => {
     if (username === 'user' && password === 'user') {
       localStorage.setItem('token', 'user_token');
       localStorage.setItem('role', 'user');
-      console.log('passo da 6');
       return Promise.resolve('logged as user');
     }
     if (username === 'admin' && password === 'admin') {

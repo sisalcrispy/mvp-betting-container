@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import UseTranslations from '../../../hooks/translations.hook';
+import context from '../../../store/context';
 
 const NotAuthorized = () => {
-  const { t } = UseTranslations();
+  const { state } = useContext(context);
+  const { t } = state;
+
   return (
     <div className="container" id="login-form">
       <div className="row">

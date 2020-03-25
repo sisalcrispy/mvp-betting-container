@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import UseTranslations from '../../../hooks/translations.hook';
+import context from '../../../store/context';
 
 const BetsDetail = props => {
   const { match } = props;
-  const { t } = UseTranslations();
+  const { state } = useContext(context);
+  const { t } = state;
 
   return (
     <div className="container">
