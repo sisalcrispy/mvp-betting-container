@@ -33,7 +33,7 @@ const LoginForm = (props: RouteProps) => {
 
                 <form onSubmit={e => sendForm(e, dispatch)}>
                   <div className="errors">
-                    {loginErrors.map(error => <p key={error}>{t(error)}</p>)}
+                    {loginErrors.map((error: string) => <p key={error}>{t(error)}</p>)}
                   </div>
                   <input
                     type="text"
