@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import context from '../../../store/context';
+import context from '../../../context/context';
 
 const BetsDetail = props => {
   const { match } = props;

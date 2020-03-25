@@ -28,10 +28,10 @@ const TranslationsService = () => {
     });
   init();
 
-  const t = (stringCode) => translations.t(stringCode);
-  const otherLanguage = () => (translations.language === 'it' ? 'en' : 'it');
+  const t = (stringCode: string) : string => translations.t(stringCode);
+  const otherLanguage = () : string => (translations.language === 'it' ? 'en' : 'it');
 
-  const switchLanguage = () => {
+  const switchLanguage = () : void=> {
     translations.changeLanguage(otherLanguage());
   };
 

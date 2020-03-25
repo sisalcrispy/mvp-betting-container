@@ -1,13 +1,15 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import UserStatus from '../user-status/user-status.component';
-import context from '../../../store/context';
+import context from '../../../context/context';
 
 import logo from '../../../static/images/logo.svg';
 import './header.component.scss';
 
 const Header = () => {
   const { state, dispatch } = useContext(context);
+  console.log(useContext(context));
+  console.log(state);
   const { t, otherLanguage } = state;
   return (
 

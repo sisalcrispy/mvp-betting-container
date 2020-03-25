@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import context from '../../../store/context';
+import context from '../../../context/context';
 import useLoginForm from '../../../hooks/login-form.hook';
 
 import './user-status.component.scss';
@@ -19,7 +19,7 @@ const UserStatus = () => {
       <span>\\</span>
       {state.isAuthenticated ? (
         <button
-          onClick={e => logoutAndRedirect(dispatch)}
+          onClick={() => logoutAndRedirect(dispatch)}
           type="button"
         >Logout
         </button>

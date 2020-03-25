@@ -3,7 +3,7 @@ import AuthService from '../services/auth.service';
 
 const { login, logout } = AuthService();
 
-const useLoginForm = history => {
+const useLoginForm = (history: any) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loginErrors, setLoginErrors] = useState([]);
@@ -11,7 +11,7 @@ const useLoginForm = history => {
 
   React.useEffect(() => {});
 
-  const sendForm = (event, dispatch) => {
+  const sendForm = (event: any, dispatch: (action: string) => void ) => {
     event.preventDefault();
 
     setLoginErrors([]);
@@ -21,14 +21,14 @@ const useLoginForm = history => {
           dispatch('updateUserStatus');
           history.push('/bets');
         }).catch(error => {
-          setLoginErrors(previousErrors => [...previousErrors, [error.message]]);
+          // setLoginErrors(previousErrors => [...previousErrors, [error.message]]);
         });
     } else {
-      setLoginErrors(previousErrors => [...previousErrors, ['errors.provide_credentials']]);
+      //setLoginErrors(previousErrors => [...previousErrors, ['errors.provide_credentials']]);
     }
   };
 
-  const logoutAndRedirect = (dispatch) => {
+  const logoutAndRedirect = (dispatch: (actionName: string) => void) => {
     logout()
       .then(() => {
         dispatch('updateUserStatus');

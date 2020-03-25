@@ -1,5 +1,5 @@
 const AuthService = () => {
-  const login = (username, password) => {
+  const login = (username: string, password: string) => {
     if (username === 'user' && password === 'user') {
       localStorage.setItem('token', 'user_token');
       localStorage.setItem('role', 'user');

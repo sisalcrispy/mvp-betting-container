@@ -1,8 +1,9 @@
 import React from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 import NotAuthorized from '../not-authorized/not-authorized.component';
+import RouteGuardProps from "../../../types/routeGuardProps.interface";
 
-const RouteGuard = props => {
+const RouteGuard = (props: RouteGuardProps)  => {
   const { Component, canActivate } = props;
   const history = useHistory();
   const match = useRouteMatch();
