@@ -2,9 +2,14 @@
   "back": "Back",
   "bet": "Bet",
   "this_is_the_bet": "This is the bet",
+  "login": "Login",
+  "index": "Index",
+  "not_authorized": "Not Authorized",
+  "just_admin": "Just admin",
   "cta": {
     "go_to_bet": "Go to bet",
-    "switch_to": "Switch to"
+    "switch_to": "Switch to",
+    "go_to_admin_module": "Go to admin module"
   },
   "errors": {
     "provide_credentials": "Provide credentials"

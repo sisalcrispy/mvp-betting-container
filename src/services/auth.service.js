@@ -22,7 +22,7 @@ const AuthService = () => {
 
   const isAdmin = () => (localStorage.getItem('role') === 'admin');
 
-  const isAuthenticated = () => (localStorage.getItem('role') === 'user' && localStorage.getItem('token') !== null);
+  const isAuthenticated = () => (localStorage.getItem('token') !== null);
 
   return {
     login, isAdmin, isAuthenticated, logout,
