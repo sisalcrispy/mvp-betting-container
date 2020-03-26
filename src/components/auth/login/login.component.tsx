@@ -6,16 +6,12 @@ import RouteProps from "../../../types/routeProps.interface";
 
 import './login.component.scss';
 
-
 const LoginForm = (props: RouteProps) => {
   const { history } = props;
   const {
     username, password, sendForm, setUsername, setPassword, loginErrors,
   } = useLoginForm(history);
   const { dispatch, state } = useContext(context);
-
-  console.log(useContext(context));
-
   const { t } = state;
 
   return (
