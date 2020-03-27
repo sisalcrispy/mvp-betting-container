@@ -1,16 +1,15 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import UserStatus from '../user-status/user-status.component';
-import context from '../../../context/context';
+import context from "../../../context/context";
 
 import logo from '../../../static/images/logo.svg';
 import './header.component.scss';
 
 const Header = () => {
-  const { state, dispatch } = useContext(context);
-  console.log(useContext(context));
-  console.log(state);
+  const {state, dispatch} = useContext(context);
   const { t, otherLanguage } = state;
+
   return (
 
     <header className="app-header">
@@ -25,7 +24,7 @@ const Header = () => {
             </Link>
           </div>
           <div className="col-md-6">
-            <UserStatus />
+            <UserStatus/>
           </div>
           <div className="col-md-3">
             <button

@@ -1,17 +1,18 @@
 import React, { useContext } from 'react';
 import { Redirect } from 'react-router-dom';
 import useLoginForm from '../../../hooks/login-form.hook';
-import context from '../../../context/context';
 import RouteProps from "../../../types/routeProps.interface";
+import context from "../../../context/context";
 
 import './login.component.scss';
+
 
 const LoginForm = (props: RouteProps) => {
   const { history } = props;
   const {
     username, password, sendForm, setUsername, setPassword, loginErrors,
   } = useLoginForm(history);
-  const { dispatch, state } = useContext(context);
+  const { state, dispatch } = useContext(context);
   const { t } = state;
 
   return (

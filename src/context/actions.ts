@@ -1,21 +1,29 @@
-import mutations from "./mutations";
 import Libraries from 'sisal-mvp-betting-library';
+import AuthService from "../services/auth.service";
 
-const {switchLanguage } = Libraries.TranslationsService('global');
 
+const trans = Libraries.TranslationsService('global');
+const { isAdmin, isAuthenticated } = AuthService();
 
-const actions = (actionName: string): Promise<object> => {
-    let newState = {};
-    switch(actionName){
-        case 'updateUserStatus':
-            newState =  mutations.updateUserStatus();
-            break;
-        case 'switchLanguage':
-            switchLanguage();
-            newState =  mutations.updateLanguage();
-            break;
-    }
-    return Promise.resolve(newState);
+const actions =  (commit: (commitName: string, payload?: any) => void) => {
+
+    const updateUserStatus = () => {
+        commit('setIsAuthenticated', isAuthenticated());
+        commit('setIsAdmin', isAdmin());
+        return Promise.resolve(true);
+    };
+
+    const switchLanguage = () => {
+        trans.switchLanguage();
+        commit('setT', trans.t);
+        commit('setOtherLanguage', trans.otherLanguage);
+        return Promise.resolve(true);
+    };
+
+    return {updateUserStatus, switchLanguage};
+
 };
+
+
 
 export default actions;

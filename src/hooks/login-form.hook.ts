@@ -16,13 +16,12 @@ const useLoginForm = (history: any) => {
 
   React.useEffect(() => {});
 
-  const sendForm = (event: any, dispatch: (action: string) => void ) => {
+  const sendForm = (event: any, dispatch: (actionName: string) => void ) => {
     event.preventDefault();
-
     updateLoginErrors([]);
     if (validate()) {
       login(username, password)
-        .then(a => {
+        .then(() => {
           dispatch('updateUserStatus');
           history.push('/bets');
         }).catch(error => {

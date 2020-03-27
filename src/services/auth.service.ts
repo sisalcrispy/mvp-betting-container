@@ -3,6 +3,7 @@ const AuthService = () => {
     if (username === 'user' && password === 'user') {
       localStorage.setItem('token', 'user_token');
       localStorage.setItem('role', 'user');
+      console.log('made login');
       return Promise.resolve('logged as user');
     }
     if (username === 'admin' && password === 'admin') {
@@ -16,6 +17,7 @@ const AuthService = () => {
   const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('role');
+    console.log('logout?');
     return Promise.resolve('logged out');
   };
 

@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import context from '../../../context/context';
+import context from "../../../context/context";
 
 import './bets-list.component.scss';
 
 const BetsList = () => {
   const { state } = useContext(context);
-  const { t } = state;
+  const {t} = state;
   const betsList = [
     {
       id: 1,

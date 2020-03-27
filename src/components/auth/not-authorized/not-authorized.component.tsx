@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import context from '../../../context/context';
+import context from "../../../context/context";
 
 const NotAuthorized = () => {
-  const { state } = useContext(context);
+  const { state} = useContext(context);
   const { t } = state;
 
   return (

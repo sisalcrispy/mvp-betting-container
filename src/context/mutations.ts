@@ -1,16 +1,21 @@
-import AuthService from '../services/auth.service';
-import Libraries from 'sisal-mvp-betting-library';
 
-const { isAdmin, isAuthenticated } = AuthService();
-const { t, otherLanguage } = Libraries.TranslationsService('global');
+const mutations = (state: any) => {
+    const setIsAuthenticated = (newValue: boolean) => {
+        return {isAuthenticated: newValue};
+    };
 
-const mutations = {
-  updateUserStatus() {
-    return ({ isAdmin: isAdmin(), isAuthenticated: isAuthenticated() });
-  },
-  updateLanguage() {
-    return ({ t, otherLanguage });
-  },
+    const setIsAdmin = (newValue: boolean) => {
+        return {isAdmin: newValue};
+    };
+
+    const setT = (newvalue: any) => {
+        return {t: newvalue}
+    };
+    const setOtherLanguage = (newvalue: any) => {
+        return {otherLanguage: newvalue}
+    };
+
+    return {setIsAuthenticated, setIsAdmin, setT, setOtherLanguage};
 };
 
 export default mutations;

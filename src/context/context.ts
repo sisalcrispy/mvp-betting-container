@@ -1,22 +1,14 @@
-import React from 'react';
-import initialState from './initial-state';
-import mutations from './mutations';
-import actions from './actions';
+import GlobalState from "../types/globalState.interface";
+import SisalStore from "../components/commons/store/";
+import mutations from "./mutations";
+import actions from "./actions";
+import initialState from "./initial-state";
 
-import GlobalState from '../types/globalState.interface';
 
-type Context = {
-    store: {initialState: GlobalState, mutations: any, actions: any};
-    state: GlobalState;
-    dispatch: any
-}
+const {createStore} = SisalStore<GlobalState>();
+const {createContext} = createStore({initialState, mutations, actions});
 
-const context = React.createContext<Context>(
-    {
-        state: initialState,
-        dispatch: () => {},
-        store:{ initialState, mutations, actions}
-    }
-);
+const context = createContext();
+
 
 export default context;

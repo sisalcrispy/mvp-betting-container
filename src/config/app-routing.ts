@@ -1,5 +1,4 @@
 import SisalBetModule from 'sisal-bet-module';
-
 import LoginForm from '../components/auth/login/login.component';
 import BetsList from '../components/bets/bets-list/bets-list.component';
 import BetsDetail from '../components/bets/bets-detail/bets-detail.component';
@@ -8,9 +7,6 @@ import RoutesList from "../types/routesList.interface";
 
 const always = () => true;
 const { isAdmin, isAuthenticated } = AuthService();
-
-console.log(SisalBetModule);
-console.log(LoginForm);
 
 const routes: Array<RoutesList> = [
   { path: '/module', component: SisalBetModule, canActivate: isAdmin },
