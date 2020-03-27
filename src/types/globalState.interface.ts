@@ -1,6 +1,6 @@
 export default interface GlobalState {
-    isAuthenticated: boolean;
-    isAdmin: boolean;
+isAuthenticated: boolean|undefined;
+    isAdmin: boolean|undefined;
     t: ((stringCode:string)  => string)|(() => {});
     otherLanguage: (() => string)|(() => {});
 }

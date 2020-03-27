@@ -4,22 +4,25 @@ import useLoginForm from '../../../hooks/login-form.hook';
 import context from "../../../context/context";
 
 import "./user-status.component.scss"
+import useUser from "../../../hooks/user.hook";
 
 const UserStatus = () => {
 
     const history = useHistory();
-    const {state, dispatch} = useContext(context);
+    const {dispatch} = useContext(context);
+    const {isAuthenticated, isAdmin} = useUser();
+
     const {logoutAndRedirect} = useLoginForm(history);
 
     return (
 
         <div className="user-status">
-            <p>{state.isAuthenticated
-                ? (`Logged as: ${state.isAdmin ? 'Admin' : 'User'}`)
+            <p>{isAuthenticated
+                ? (`Logged as: ${isAdmin ? 'Admin' : 'User'}`)
                 : ('Not logged')}
             </p>
             <span>\\</span>
-            {state.isAuthenticated ? (
+            {isAuthenticated ? (
                 <button
                     onClick={() => logoutAndRedirect(dispatch)}
                     type="button"

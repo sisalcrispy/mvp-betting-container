@@ -4,9 +4,11 @@ import {
 } from 'react-router-dom';
 import Header from './commons/header/header.component';
 import RouteGuard from './auth/route-guard/route-guard.component';
-import ContextProvider from './commons/store/components/context-provider.component';
+import Sisal from "sisal-mvp-betting-library";
 import routes from '../config/app-routing';
 import context from "../context/context";
+
+const {ContextProvider} = Sisal.SisalStore();
 
 const App = () => (
     //@ts-ignore

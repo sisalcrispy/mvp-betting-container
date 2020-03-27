@@ -5,6 +5,7 @@ import RouteProps from "../../../types/routeProps.interface";
 import context from "../../../context/context";
 
 import './login.component.scss';
+import useUser from "../../../hooks/user.hook";
 
 
 const LoginForm = (props: RouteProps) => {
@@ -12,12 +13,13 @@ const LoginForm = (props: RouteProps) => {
   const {
     username, password, sendForm, setUsername, setPassword, loginErrors,
   } = useLoginForm(history);
-  const { state, dispatch } = useContext(context);
+  const {state, dispatch} = useContext(context);
+  const {isAuthenticated} = useUser();
   const { t } = state;
 
   return (
     <>
-      { state.isAuthenticated
+      { isAuthenticated
         ? (<Redirect to="/bets" />)
         : (
           <div className="container" id="login-form">
