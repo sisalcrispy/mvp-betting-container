@@ -1,7 +1,7 @@
 import mutations from "./mutations";
-import TranslationsService from "../services/translations.service";
+import Libraries from 'sisal-mvp-betting-library';
 
-const {switchLanguage } = TranslationsService();
+const {switchLanguage } = Libraries.TranslationsService('global');
 
 
 const actions = (actionName: string): Promise<object> => {

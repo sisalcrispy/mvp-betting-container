@@ -1,9 +1,9 @@
 import AuthService from '../services/auth.service';
-import TranslationsService from '../services/translations.service';
+import Libraries from 'sisal-mvp-betting-library';
 import GlobalState from "../types/globalState.interface";
 
 const { isAdmin, isAuthenticated } = AuthService();
-const { t, otherLanguage } = TranslationsService();
+const { t, otherLanguage } = Libraries.TranslationsService('global');
 
 const initialState: GlobalState = {
   isAdmin: isAdmin(),

@@ -1,8 +1,8 @@
 import AuthService from '../services/auth.service';
-import TranslationsService from '../services/translations.service';
+import Libraries from 'sisal-mvp-betting-library';
 
 const { isAdmin, isAuthenticated } = AuthService();
-const { t, otherLanguage } = TranslationsService();
+const { t, otherLanguage } = Libraries.TranslationsService('global');
 
 const mutations = {
   updateUserStatus() {
