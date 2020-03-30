@@ -6,14 +6,15 @@ import actions from "./actions";
 const initialState: GlobalState = {
     isAdmin: undefined,
     isAuthenticated: undefined,
-    t: (s: string) => (s),
-    otherLanguage: () => ('it')
+
 };
 
-const {createStore} = Sisal.SisalStore<GlobalState>();
-const {createContext} = createStore({initialState, mutations, actions});
+const {createStore} = Sisal.Store<GlobalState>();
+const {createContext, addToContext} = createStore({initialState, mutations, actions});
+createContext();
 
-const context = createContext();
+const trans = Sisal.Translations().store;
+const context = addToContext(trans.initialState, trans.mutations, trans.actions);
 
 
 export default context;

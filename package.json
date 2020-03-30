@@ -9,7 +9,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
     "sisal-bet-module": "^0.3.2",
-    "sisal-mvp-betting-library": "^0.1.17"
+    "sisal-mvp-betting-library": "^0.1.23"
   },
   "devDependencies": {
     "typescript": "^3.8.3",
