@@ -9,6 +9,7 @@ const always = () => true;
 const { isAdmin, isAuthenticated } = AuthService();
 
 const routes: Array<RoutesList> = [
+  // @ts-ignore
   { path: '/module', component: SisalBetModule, canActivate: isAdmin },
   { path: '/bets/:id', component: BetsDetail, canActivate: isAuthenticated },
   { path: '/bets/', component: BetsList, canActivate: isAuthenticated },
