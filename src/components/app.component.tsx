@@ -12,7 +12,7 @@ const {ContextProvider} = Sisal.Store();
 const {LanguagePack} = Sisal.Translations();
 
 const App = () => (
-    <LanguagePack languagePack={'global'}>
+    <LanguagePack languagePack={'global'} language={'en'}>
         <ContextProvider context={context}>
             <BrowserRouter>
                 <Header/>
