@@ -8,8 +8,8 @@
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-    "sisal-bet-module": "^0.3.31",
-    "sisal-mvp-betting-library": "^0.1.47"
+    "sisal-bet-module": "^0.3.34",
+    "sisal-mvp-betting-library": "^0.1.50"
   },
   "devDependencies": {
     "typescript": "^3.8.3",
