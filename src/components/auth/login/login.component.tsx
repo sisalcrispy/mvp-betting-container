@@ -3,10 +3,9 @@ import { Redirect } from 'react-router-dom';
 import useLoginForm from '../../../hooks/login-form.hook';
 import RouteProps from "../../../types/routeProps.interface";
 import context from "../../../context/context";
-
-import './login.component.scss';
 import useUser from "../../../hooks/user.hook";
 
+import './login.component.scss';
 
 const LoginForm = (props: RouteProps) => {
   const { history } = props;

@@ -6,14 +6,14 @@ import AuthService from '../services/auth.service';
 import RoutesList from "../types/routesList.interface";
 
 const always = () => true;
-const { isAdmin, isAuthenticated } = AuthService();
+const {isAdmin, isAuthenticated} = AuthService();
 
 const routes: Array<RoutesList> = [
-  // @ts-ignore
-  { path: '/module', component: SisalBetModule, canActivate: isAdmin },
-  { path: '/bets/:id', component: BetsDetail, canActivate: isAuthenticated },
-  { path: '/bets/', component: BetsList, canActivate: isAuthenticated },
-  { path: '', component: LoginForm, canActivate: always },
+    // @ts-ignore
+    {path: '/module', component: SisalBetModule, canActivate: isAdmin},
+    {path: '/bets/:id', component: BetsDetail, canActivate: isAuthenticated},
+    {path: '/bets/', component: BetsList, canActivate: isAuthenticated},
+    {path: '', component: LoginForm, canActivate: always},
 ];
 
 export default routes;
